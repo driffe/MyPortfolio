@@ -36,16 +36,19 @@ body {
 header {
     display: flex;
     background-color: #636365;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     min-height: 100vh;
+}
+
+.menu {
+    padding: 5rem;;
 }
 
 .start {
     display: flex;
-    flex: 1;
-    border: 1px solid #333;
-    align-items: center;
-    justify-content: center;
+    flex-grow: 1;
+    padding: 0 10rem;
 }
 .welcome {
     display: flex;
@@ -67,7 +70,7 @@ header {
     color: #fff;
     font-size: 60px;
     font-weight: 400;
-    padding-top: 18px;
+    padding-top: 1.5rem;
 }
 
 .start .dynamic-txt {
@@ -110,8 +113,6 @@ header {
     animation: typing 3s steps(10) infinite;
 }
 
-
-
 @keyframes typing {
     40%, 60% {
         left: calc(100% + 30px);
@@ -130,15 +131,11 @@ nav ul {
     position: relative;
     text-align: center;
     transform: skewY(-15deg);
-}
-
-.second-nav {
-    flex: 1;
-}
+}   
 
 nav ul li {
     position: relative;
-    width: 200px;
+    width: 150px;
     padding: 15px;
     background: #3e3f46;
     list-style: none;
@@ -201,17 +198,9 @@ nav ul li a p {
     font-weight: bolder;
 }
 
-nav ul li a p:hover {
-    color: #FC6D6D;
-}
-
-nav ul li a p.active {
-    color: #FC6D6D;
-}
-
 nav ul li a img {
-    height: 100px;
-    width: 100px;
+    height: 4rem;
+    width: 4rem;
 }
 
 #clean-button {
@@ -234,20 +223,46 @@ nav ul li a img {
     color: #fff;
 }
 
+.scroll-btn {
+    bottom: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50);
+    border: 1px solid #fff;
+    padding: 10px 10px 20px;
+    border-radius: 30px;
+}
+
+.scroll-bar span{
+    border: 2px solid #fff;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+.scroll-bar {
+    animation: mover 1s infinite alternate;
+}
+
+@keyframes mover {
+    0%{transform: translateY(0);}
+    100%{transform: translateY(10px);}
+}
 section {
     padding: 40px 0;
     text-align: center;
 }
 
 #about-me {
-    background-color: #C8C8C8;
+    background-color: #636365;
     color: #000000;
     text-align: center;
     padding: 60px 0;
+    min-height: 100vh;
 }
 
 .profile img{
-    height: 10rem;
+    height: 25rem;
+    border-radius: 1rem;
 }
 
 
@@ -255,6 +270,7 @@ section {
     background-color: #636365;
     padding: 60px 0;
     text-align: center;
+    min-height: 100vh;
 }
 
 #about h2 {
@@ -263,7 +279,7 @@ section {
 
 .container h2 {
     color: #FC6D6D;
-    font-size: 35px;
+    font-size: 40px;
     padding: 0rem 0 3rem;
 }
 .experience {
@@ -271,20 +287,70 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
+    gap: 5rem;
 }
 
-.experience-item {
-    flex: 1;
+.card {
+    position: relative;
+    width: 18.75rem;
+    height: 25rem; 
     text-align: left;
-    background-color: #C8C8C8;
-    border-radius: 2rem;
-    padding: 3rem 2rem 4rem;
+    background: var(--clr);
+    border-radius: 1.25rem;
+    border-top-left-radius: 4.375rem;
+    overflow: hidden;
+}
+.card .box {
+    position: absolute;
+    inset: 1rem;
+    background: #636365;
+    border-radius: 0.5rem
 }
 
-.experience-icon {
-    font-size: 36px;
-    margin-bottom: 10px;
+.card .box .experience-icon {
+    position: absolute;
+    width: 8.75rem;
+    height: 8.75rem;
+    background: var(--clr);
+    border-bottom-right-radius: 50%;
+    transition: 0.5s
+}
+
+.card:hover .box .experience-icon {
+    width: 100%;
+}
+
+.card .box .experience-icon::before {
+    content: '';
+    position: absolute;
+    bottom: 1.875rem;
+    left: 0;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: transparent;
+    border-top-left-radius: 1.875rem;
+    box-shadow: -0.3125rem -0.3125rem 0 0.3125rem var(--clr); 
+}
+
+.card .box .experience-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1.875rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: transparent;
+    border-top-left-radius: 1.875rem;
+    box-shadow: -0.3125rem -0.3125rem 0 0.3125rem var(--clr); 
+}
+
+.card .box .experience-icon .icon-box {
+    position: absolute;
+    inset: 1rem;
+    background: #636365;
+    border-radius: 50%;
+    border-top-right-radius: 0.625rem;
+    border-bottom-left-radius: 0.625rem;
 }
 
 .experience-content h3 {
