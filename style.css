@@ -287,7 +287,7 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 20rem;
 }
 
 .card {
@@ -302,7 +302,7 @@ section {
 }
 .card .box {
     position: absolute;
-    inset: 1rem;
+    inset: 0.625rem;
     background: #636365;
     border-radius: 0.5rem
 }
@@ -346,11 +346,27 @@ section {
 
 .card .box .experience-icon .icon-box {
     position: absolute;
-    inset: 1rem;
+    inset: 0.625rem;
     background: #636365;
     border-radius: 50%;
     border-top-right-radius: 0.625rem;
     border-bottom-left-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+}
+
+.card .box .experience-icon .icon-box img {
+    object-fit: scale-down;
+}
+
+.card .box .experience-content {
+    position: absolute;
+    top: 9.375rem;
+    padding: 1.25rem;
+}
+
+.card .box .experience-content {
+    color: #fff;
 }
 
 .experience-content h3 {
