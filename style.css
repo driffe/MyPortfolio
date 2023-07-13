@@ -1,3 +1,11 @@
+/* 
+color
+#2C3639
+#3F4E4F
+#A27B5C
+#DCD7C9
+*/
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +26,7 @@ body {
 .key {
     position: fixed;
     font-size: 24px;
-    color: #333;
+    color: #DCD7C9;
     pointer-events: none;
     transition: transform 0.3s ease;
 }
@@ -28,14 +36,13 @@ body {
 }
 
 .container {
-    max-width: 960px;
     margin: 0 auto;
     padding: 20px;
 }
 
 header {
     display: flex;
-    background-color: #636365;
+    background-color: #2C3639;
     justify-content: space-around;
     align-items: center;
     min-height: 100vh;
@@ -48,7 +55,7 @@ header {
 .start {
     display: flex;
     flex-grow: 1;
-    padding: 0 10rem;
+    padding: 0 20rem;
 }
 .welcome {
     display: flex;
@@ -70,7 +77,7 @@ header {
     color: #fff;
     font-size: 60px;
     font-weight: 400;
-    padding-top: 1.5rem;
+    margin-top: 1.625rem;
 }
 
 .start .dynamic-txt {
@@ -96,26 +103,25 @@ header {
     }
 }
 
-.dynamic-txt li span {
+.dynamic-txt li {
     position: relative;
-    margin: 5px 0;
     line-height: 90px;
 }
 
-.dynamic-txt li span::after {
+.dynamic-txt li::after {
     content: "";
     position: absolute;
     left: 0;
-    height: 120%;
+    height: 100%;
     width: 100%;
-    background: #636365;
+    background: #2C3639;
     border-left: 2px solid #FC6D6D;
     animation: typing 3s steps(10) infinite;
 }
 
 @keyframes typing {
     40%, 60% {
-        left: calc(100% + 30px);
+        left: calc(100% + 0.625rem);
       }
       100% {
         left: 0;
@@ -137,7 +143,7 @@ nav ul li {
     position: relative;
     width: 150px;
     padding: 15px;
-    background: #3e3f46;
+    background: #3F4E4F;
     list-style: none;
     z-index: var(--i);
 }
@@ -154,7 +160,7 @@ nav ul li::before{
     left: -40px;
     width: 40px;
     height: 100%;
-    background: #2e3133;
+    background: #333f40;
     transform-origin: right;
     transform: skewY(45deg);
     transition: 0.5s;
@@ -167,7 +173,7 @@ nav ul li::after{
     left: 0;
     width: 100%;
     height: 40px;
-    background: #35383e;
+    background: #333f40;
     transform-origin: bottom;
     transform: skewX(45deg);
     transition: 0.5s;
@@ -253,7 +259,7 @@ section {
 }
 
 #about-me {
-    background-color: #636365;
+    background-color: #2C3639;
     color: #000000;
     text-align: center;
     padding: 60px 0;
@@ -267,7 +273,7 @@ section {
 
 
 #about {
-    background-color: #636365;
+    background-color: #2C3639;
     padding: 60px 0;
     text-align: center;
     min-height: 100vh;
@@ -282,12 +288,12 @@ section {
     font-size: 40px;
     padding: 0rem 0 3rem;
 }
-.experience {
+.project {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20rem;
+    gap: 6rem;
 }
 
 .card {
@@ -303,11 +309,11 @@ section {
 .card .box {
     position: absolute;
     inset: 0.625rem;
-    background: #636365;
+    background: #2C3639;
     border-radius: 0.5rem
 }
 
-.card .box .experience-icon {
+.card .box .project-icon {
     position: absolute;
     width: 8.75rem;
     height: 8.75rem;
@@ -316,11 +322,11 @@ section {
     transition: 0.5s
 }
 
-.card:hover .box .experience-icon {
+.card:hover .box .project-icon {
     width: 100%;
 }
 
-.card .box .experience-icon::before {
+.card .box .project-icon::before {
     content: '';
     position: absolute;
     bottom: 1.875rem;
@@ -332,7 +338,7 @@ section {
     box-shadow: -0.3125rem -0.3125rem 0 0.3125rem var(--clr); 
 }
 
-.card .box .experience-icon::before {
+.card .box .project-icon::before {
     content: '';
     position: absolute;
     top: 0;
@@ -344,10 +350,10 @@ section {
     box-shadow: -0.3125rem -0.3125rem 0 0.3125rem var(--clr); 
 }
 
-.card .box .experience-icon .icon-box {
+.card .box .project-icon .icon-box {
     position: absolute;
     inset: 0.625rem;
-    background: #636365;
+    background: #2C3639;
     border-radius: 50%;
     border-top-right-radius: 0.625rem;
     border-bottom-left-radius: 0.625rem;
@@ -355,21 +361,21 @@ section {
     justify-content: center;
 }
 
-.card .box .experience-icon .icon-box img {
+.card .box .project-icon .icon-box img {
     object-fit: scale-down;
 }
 
-.card .box .experience-content {
+.card .box .project-content {
     position: absolute;
     top: 9.375rem;
     padding: 1.25rem;
 }
 
-.card .box .experience-content {
+.card .box .project-content {
     color: #fff;
 }
 
-.experience-content h3 {
+.project-content h3 {
     margin: 10px 0;
 }
 
@@ -379,16 +385,19 @@ section {
 
 .button {
     display: inline-block;
-    background-color: #333;
+    background-color: #A27B5C;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     margin-top: 10px;
     transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 5rem;
 }
 
 .button:hover {
-    background-color: #888;
+    background-color: #DCD7C9;
+    color: #000000;
 }
 
 /* #invertedcursor {
@@ -407,8 +416,8 @@ section {
 } */
 
 footer {
-    background-color: #636365;
-    color: #333;
+    background-color: #2C3639;
+    color: #fff;
     text-align: center;
     padding: 20px;
 }
