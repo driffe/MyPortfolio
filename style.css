@@ -253,6 +253,7 @@ nav ul li a img {
     0%{transform: translateY(0);}
     100%{transform: translateY(10px);}
 }
+
 section {
     padding: 40px 0;
     text-align: center;
@@ -271,7 +272,6 @@ section {
     border-radius: 1rem;
 }
 
-
 #about {
     background-color: #2C3639;
     padding: 60px 0;
@@ -286,8 +286,70 @@ section {
 .container h2 {
     color: #FC6D6D;
     font-size: 40px;
-    padding: 0rem 0 3rem;
+    padding: 0rem 0 5rem;
 }
+
+#experiences {
+    background-color: #2C3639;
+    color: #000000;
+    padding: 60px 0;
+    min-height: 100vh;
+}
+
+.timeline {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+}
+
+hr {
+    transform: rotate(90deg);
+    height: 3px;
+    background: #fff;
+}
+
+.timeline .outer .left-card, .right-card {
+    position: relative;
+    margin: 0 0 20px 20px;
+    padding: 10px;
+    background: #fff;
+    color: gray;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.timeline .outer .left-card {
+    left: 0;
+}
+
+.timeline .outer .right-card {
+    left: 50%;
+}
+
+.timeline .outer .card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.timeline .outer .card .info .title {
+    color: orangered;
+    position: relative;
+}
+
+.timeline .outer .card .info .title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    left: -39px;
+    border: 3px solid orangered;
+}
+
 .project {
     display: flex;
     flex-wrap: wrap;
@@ -398,6 +460,51 @@ section {
 .button:hover {
     background-color: #DCD7C9;
     color: #000000;
+}
+
+#contacts {
+    min-height: 30vh;
+    background: #2C3639;
+}
+
+.contacts-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+.method {
+    padding: 0 3rem;
+    margin: 1.23rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.method .method-icon {
+    font-size: 28px;
+    background: #FC6D6D;
+    width: 3.75rem;
+    height: 3.75rem;
+    text-align: center;
+    line-height: 3.75rem !important;
+    border-radius: 50%;
+}
+
+.method:hover .method-icon {
+    background: none;
+    color: #FC6D6D;
+    transform: scale(1.6);
+}
+
+.method p {
+    margin-top: 1.625rem;
+    font-weight: 350;
+    font-size: 20px;
 }
 
 /* #invertedcursor {
