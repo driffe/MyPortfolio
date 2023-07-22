@@ -1,96 +1,95 @@
-/* 
-color
-#2C3639
-#3F4E4F
-#A27B5C
-#DCD7C9
-#1b7f7
-
-https://github.com/avinash201199/Portfolio-Collection
-*/
-
+/* General styles */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     box-sizing: border-box;
-    /* cursor: none; */
 }
-
-#key-display {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 36px;
-    color: #fff;
-}
-
-.key {
-    position: fixed;
-    font-size: 24px;
-    color: #DCD7C9;
-    pointer-events: none;
-    transition: transform 0.3s ease;
-}
-
-.key:hover {
-    transform: scale(1.2);
-}
-
-.container {
-    margin: 0 auto;
-    padding: 20px;
-}
-
+/* Header styles */
 header {
-    display: flex;
     background-color: #2C3639;
-    justify-content: space-around;
     align-items: center;
     min-height: 100vh;
 }
-
-.menu {
-    padding: 5rem;;
+header h1 {
+    color: #AAA;
+    font-size: 40px;
+    font-weight: lighter;
+    margin-bottom: 5px;
 }
-
+div.menu {
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+}
+div.menu a {
+    color: #FFF;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+div.highlightTextIn a {
+    color: rgba(0, 0, 0, 0.4);
+}
+div.highlightTextIn a:before {
+    position: absolute;
+    color: #FFF;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    overflow: hidden;
+    content: attr(alt);
+    transition: all 0.3s;
+    transform: scale(0.8);
+    opacity: 0;
+}
+div.highlightTextIn a:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
 .start {
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0 20rem;
 }
 .welcome {
     display: flex;
     flex-direction: column;
 }
-
 .hello h1 {
     color: #fff;
     font-size: 60px;
     font-weight: 400;
 }
-
 .content {
     display: flex;
     flex-direction: row;
 }
-
 .start .static-txt {
     color: #fff;
     font-size: 60px;
     font-weight: 400;
     margin-top: 1.625rem;
 }
-
 .start .dynamic-txt {
     margin-left: 15px;
     height: 90px;
     line-height: 90px;
     overflow: hidden;
 }
-
-.dynamic-txt li{
+.dynamic-txt li {
     list-style: none;
     color: #FC6D6D;
     font-size: 60px;
@@ -99,18 +98,11 @@ header {
     top: 0;
     animation: slide 12s steps(4) infinite;
 }
-
 @keyframes slide {
-    100%{
-      top: -360px;
-    }
+    100% {
+        top: -360px;
+   }
 }
-
-.dynamic-txt li {
-    position: relative;
-    line-height: 90px;
-}
-
 .dynamic-txt li::after {
     content: "";
     position: absolute;
@@ -121,97 +113,14 @@ header {
     border-left: 2px solid #FC6D6D;
     animation: typing 3s steps(10) infinite;
 }
-
 @keyframes typing {
     40%, 60% {
         left: calc(100% + 0.625rem);
-      }
-      100% {
+   }
+    100% {
         left: 0;
-      }
+   }
 }
-
-nav {
-    align-items: center;
-    text-align: center;
-}
-
-nav ul {
-    position: relative;
-    text-align: center;
-    transform: skewY(-15deg);
-}   
-
-nav ul li {
-    position: relative;
-    width: 150px;
-    padding: 15px;
-    background: #96714b;
-    list-style: none;
-    z-index: var(--i);
-}
-
-nav ul li:hover {
-    transform: translate(-50px);
-    background: var(--clr);
-}
-
-nav ul li::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -40px;
-    width: 40px;
-    height: 100%;
-    background: #38322b;
-    transform-origin: right;
-    transform: skewY(45deg);
-    transition: 0.5s;
-}
-
-nav ul li::after{
-    content: '';
-    position: absolute;
-    top: -40px;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: #38322b;
-    transform-origin: bottom;
-    transform: skewX(45deg);
-    transition: 0.5s;
-}
-
-nav ul li a {
-    padding: 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    letter-spacing: 0.05em;
-}
-/* 
-nav ul li:hover a {
-
-} */
-
-nav ul li a img:hover {
-    border-radius: 3px;
-}
-
-nav ul li a img.active {
-    border-radius: 3px;
-}
-
-nav ul li a p {
-    color: #000000;
-    font-size: 20px;
-    font-weight: bolder;
-}
-
-nav ul li a img {
-    height: 4rem;
-    width: 4rem;
-}
-
 #clean-button {
     position: absolute;
     top: 80%;
@@ -226,12 +135,10 @@ nav ul li a img {
     transition: background-color 0.3s ease;
     border-radius: 12px;
 }
-
 #clean-button:hover {
     background-color: #888;
     color: #fff;
 }
-
 .scroll-btn {
     bottom: 30px;
     position: absolute;
@@ -241,26 +148,26 @@ nav ul li a img {
     padding: 10px 10px 20px;
     border-radius: 30px;
 }
-
-.scroll-bar span{
+.scroll-bar span {
     border: 2px solid #fff;
     font-size: 20px;
     border-radius: 30px;
 }
-
 .scroll-bar {
     animation: mover 1s infinite alternate;
 }
-
 @keyframes mover {
-    0%{transform: translateY(0);}
-    100%{transform: translateY(10px);}
+    0% {
+        transform: translateY(0);
+   }
+    100% {
+        transform: translateY(10px);
+   }
 }
-
 section {
     text-align: center;
 }
-
+/* About section styles */
 #about-me {
     background-color: #2C3639;
     color: #000000;
@@ -268,91 +175,31 @@ section {
     padding: 60px 0;
     min-height: 100vh;
 }
-
-.profile img{
+.profile img {
     height: 25rem;
     border-radius: 1rem;
 }
-
-#about {
-    background-color: #2C3639;
-    padding: 60px 0;
-    text-align: center;
-    min-height: 100vh;
-}
-
-#about h2 {
-    margin-bottom: 30px;
-}
-
-.container h2 {
-    color: #FC6D6D;
-    font-size: 40px;
-    padding: 0rem 0 5rem;
-}
-
-/* #experiences {
-    background-color: #2C3639;
-    color: #000000;
-    padding: 60px 0;
-    min-height: 100vh;
-}
-
-.timeline {
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    padding: 20px;
-}
-
-hr {
-    transform: rotate(90deg);
-    height: 3px;
-    background: #fff;
-}
-
-.timeline .outer .left-card, .right-card {
-    position: relative;
-    margin: 0 0 20px 20px;
-    padding: 10px;
-    background: #fff;
-    color: gray;
-    border-radius: 8px;
-    max-width: 400px;
-}
-
-.timeline .outer .left-card {
-    left: 0;
-}
-
-.timeline .outer .right-card {
-    left: 52%;
-}
-
-.timeline .outer .card .info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-.timeline .outer .card .info .title {
-    color: orangered;
-    position: relative;
-} */
+/* Experiences section styles */
 #experiences {
     background-color: #2C3639;
     color: #DCD7C9;
+    text-align: center;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
+#experiences .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
 .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* The actual timeline (the vertical ruler) */
-  .timeline::after {
+}
+.timeline::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -361,19 +208,15 @@ hr {
     bottom: 0;
     left: 50%;
     margin-left: -3px;
-  }
-  
-  /* Container around content */
-  .timecard {
+}
+.timecard {
     box-sizing: border-box;
     padding: 10px 40px;
     position: relative;
     background-color: inherit;
     width: 50%;
-  }
-  
-  /* The circles on the timeline */
-  .timecard::after {
+}
+.timecard::after {
     content: '';
     position: absolute;
     width: 25px;
@@ -384,20 +227,14 @@ hr {
     top: 15px;
     border-radius: 50%;
     z-index: 1;
-  }
-  
-  /* Place the container to the left */
-  .left {
+}
+.left {
     left: 0;
-  }
-  
-  /* Place the container to the right */
-  .right {
+}
+.right {
     left: 50%;
-  }
-  
-  /* Add arrows to the left container (pointing right) */
-  .left::before {
+}
+.left::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -408,10 +245,8 @@ hr {
     border: medium solid white;
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent white;
-  }
-  
-  /* Add arrows to the right container (pointing left) */
-  .right::before {
+}
+.right::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -422,70 +257,77 @@ hr {
     border: medium solid white;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
-  }
-  
-  /* Fix the circle for containers on the right side */
-  .right::after {
+}
+.right::after {
     left: -16px;
-  }
-  
-  /* The actual content */
-  .info {
+}
+.info {
     padding: 20px 30px;
     background-color: white;
     position: relative;
     border-radius: 6px;
     opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards; 
-  }
-
-  @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); } /* Start with opacity 0 and a slight upward translation */
-    100% { opacity: 1; transform: translateY(0); } /* Fade in to full opacity with no translation */
-  }
-  
-  /* Media queries - Responsive timeline on screens less than 600px wide */
-  @media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
+    animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+   }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+   }
+}
+@media screen and (max-width: 600px) {
+   /* Place the timelime to the left */
     .timeline::after {
-      left: 31px;
-    }
-  
-  /* Full-width containers */
+        left: 31px;
+   }
+   /* Full-width containers */
     .timecard {
-      width: 100%;
-      padding-left: 70px;
-      padding-right: 25px;
-    }
-  
-  /* Make sure that all arrows are pointing leftwards */
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+   }
+   /* Make sure that all arrows are pointing leftwards */
     .timecard::before {
-      left: 60px;
-      border: medium solid white;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent white transparent transparent;
-    }
-  
-  /* Make sure all circles are at the same spot */
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+   }
+   /* Make sure all circles are at the same spot */
     .left::after, .right::after {
-      left: 15px;
-    }
-  
-  /* Make all right containers behave like the left ones */
+        left: 15px;
+   }
+   /* Make all right containers behave like the left ones */
     .right {
-      left: 0%;
-    }
-  }
-
-
-.project {
+        left: 0%;
+   }
+}
+/* Projects section styles */
+#projects {
+    background-color: #2C3639;
+    padding: 60px 0;
+    text-align: center;
+    min-height: 100vh;
+}
+#projects h2 {
+    margin-bottom: 30px;
+}
+.container h2 {
+    color: #FC6D6D;
+    font-size: 40px;
+    padding: 0rem 0 5rem;
+}
+.craft {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 6rem;
 }
-
 .card {
     width: 320px;
     height: 500px;
@@ -494,14 +336,12 @@ hr {
     border: 8px solid #fff;
     position: relative;
 }
-
 .card .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
 }
-
 .card .card-body {
     box-sizing: border-box;
     width: 100%;
@@ -509,7 +349,7 @@ hr {
     top: 0;
     right: -100%;
     position: absolute;
-    background: #1f3d4738; /* change color later*/
+    background: #1f3d4738;
     backdrop-filter: blur(5px);
     border-radius: 15px;
     color: #fff;
@@ -518,23 +358,19 @@ hr {
     padding: 30px;
     transition: 1s;
 }
-
 .card:hover .card-body {
     right: 0;
 }
-
 .card .card-body .card-title {
     text-transform: capitalize;
     font-size: 50px;
     font-weight: 500;
 }
-
 .card .card-body .card-info {
     font-size: 16px;
     line-height: 25px;
     font-weight: 400;
 }
-
 .card .card-body .card-btn {
     color: #1f3d47;
     background: #DCD7C9;
@@ -547,7 +383,6 @@ hr {
     cursor: pointer;
     width: 120px;
 }
-
 .button {
     display: inline-block;
     background-color: #A27B5C;
@@ -559,23 +394,20 @@ hr {
     text-transform: uppercase;
     border-radius: 5rem;
 }
-
 .button:hover {
     background-color: #DCD7C9;
     color: #000000;
 }
-
+/* Contact section styles */
 #contacts {
     min-height: 5vh;
     background: #2C3639;
 }
-
 .contacts-container h2 {
     color: #FC6D6D;
     font-size: 30px;
     padding: 0rem 0 2rem;
 }
-
 .contacts-card {
     display: flex;
     flex-wrap: wrap;
@@ -583,7 +415,6 @@ hr {
     align-items: center;
     gap: 6rem;
 }
-
 .method {
     padding: 0 0.625rem;
     margin: 0.625rem;
@@ -593,7 +424,6 @@ hr {
     justify-content: center;
     align-items: center;
 }
-
 .method .method-icon {
     font-size: 18px;
     background: #FC6D6D;
@@ -603,104 +433,84 @@ hr {
     line-height: 2.75rem !important;
     border-radius: 50%;
 }
-
 .method:hover .method-icon {
     background: none;
     color: #FC6D6D;
     transform: scale(1.6);
 }
-
 .method p {
     margin-top: 1rem;
     font-weight: 350;
     font-size: 20px;
 }
-
-/* #invertedcursor {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background: #fff;
-    border-radius: 50%;
-    top: var(--y, 0);
-    left: var(--x, 0);
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    mix-blend-mode: difference;
-    transition: transform .2s;
-    pointer-events: none;
-} */
-
+/* Footer styles */
 footer {
     background-color: #2C3639;
     color: #fff;
     text-align: center;
     padding: 20px;
 }
-
 @media (max-width: 1200px) {
-    /* Adjust header layout for medium screens */
+   /* Adjust header layout for medium screens */
     header {
-      padding: 1rem;
-    }
-
+        padding: 1rem;
+   }
     .menu {
-      padding: 1rem;
-    }
-
+        padding: 1rem;
+   }
     .start {
-      padding: 1rem;
-    }
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+   }
     .welcome {
-      padding: 1rem;
-    }
-
+        padding-top: 5rem;
+   }
     .content {
-      flex-direction: column;
-    }
-
+        flex-direction: column;
+        gap: 30px;
+   }
     .start .static-txt {
-      font-size: 30px;
-    }
-
+        font-size: 50px;
+        padding-right: 100px;
+   }
     .start .dynamic-txt {
-      font-size: 20px;
-    }
-
+        font-size: 40px;
+   }
     .menu ul {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
+        flex-direction: column;
+        gap: 1rem;
+   }
+    #experiences .container {
+        max-width: 100%;
+        padding: 0 20px;
+       /* Add padding for better spacing */
+   }
     .timeline .outer {
         flex-direction: column;
-    }
-
-    .timeline .outer .left-card,
-    .timeline .outer .right-card {
+   }
+    .timeline .outer .left-card, .timeline .outer .right-card {
         margin: 5rem 2rem;
-        
-    }
-
+   }
     .timeline .outer .card .info .step {
         font-size: 20px;
-    }
-
-    .project {
-        flex-wrap: wrap; /* Allow cards to wrap into a new row */
-        justify-content: center; /* Center align cards horizontally */
-        align-items: center; ; /* Space cards evenly in a row */
-        gap: 3rem; /* Reduce the gap between cards */
-      }
-    
-      .card {
-        width: calc(50% - 1.5rem); /* Reduce the card width to half of the container with a small gap in between */
-        margin-bottom: 1.5rem; /* Add some space between rows of cards */
-      }
-    
-      .card .card-body {
-        padding: 20px; /* Reduce the padding for smaller screens */
-        font-size: 14px; /* Adjust the font size for smaller screens */
-      }
-  }
+   }
+    .craft {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        ;
+        gap: 3rem;
+        / 
+   }
+    .card {
+        width: calc(50% - 1.5rem);
+        margin-bottom: 1.5rem;
+   }
+    .card .card-body {
+        padding: 20px;
+        font-size: 14px;
+   }
+}
