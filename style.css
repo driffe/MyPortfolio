@@ -10,6 +10,27 @@ body {
     color: #333;
     box-sizing: border-box;
 }
+
+#key-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #fff;
+}
+
+.key {
+    position: fixed;
+    font-size: 24px;
+    color: #DCD7C9;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.key:hover {
+    transform: scale(1.2);
+}
+
 /* Header styles */
 header {
     background-color: #2C3639;
