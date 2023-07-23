@@ -28,19 +28,36 @@ cleanButton.addEventListener('click', function() {
     });
 });
 
-document.body.onmousemove = function(e) {
-    document.documentElement.style.setProperty (
-      '--x', (
-        e.clientX+window.scrollX
-      )
-      + 'px'
-    );
-    document.documentElement.style.setProperty (
-      '--y', (
-        e.clientY+window.scrollY
-      ) 
-      + 'px'
-    );
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  const menuBtn = document.querySelector('.menu-btn');
+  const fullScreenMenu = document.querySelector('.full-screen-menu');
 
+  menuBtn.addEventListener('click', function () {
+      fullScreenMenu.classList.toggle('active');
+  });
+
+  fullScreenMenu.addEventListener('click', function (event) {
+      if (event.target === fullScreenMenu) {
+          fullScreenMenu.classList.remove('active');
+      }
+  });
+});
+
+function info() {
+  var infos = document.querySelectorAll(".info");
+
+  for (var i = 0; i < infos.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = infos[i].getBoundingClientRect().top;
+    var elementVisible = 100;
+
+    if (elementTop < windowHeight - elementVisible) {
+      infos[i].classList.add("active");
+    } else {
+      infos[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", info);
 

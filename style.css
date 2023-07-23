@@ -37,18 +37,21 @@ header {
     align-items: center;
     min-height: 100vh;
 }
+
 header h1 {
     color: #AAA;
     font-size: 40px;
     font-weight: lighter;
     margin-bottom: 5px;
 }
-div.menu {
+
+.menu {
     margin: 0 auto;
     text-align: center;
     padding: 30px 0;
 }
-div.menu a {
+
+.menu a {
     color: #FFF;
     text-decoration: none;
     font: 20px Raleway;
@@ -59,10 +62,12 @@ div.menu a {
     cursor: pointer;
     text-transform: uppercase;
 }
-div.highlightTextIn a {
+
+.highlightTextIn a {
     color: rgba(0, 0, 0, 0.4);
 }
-div.highlightTextIn a:before {
+
+.highlightTextIn a:before {
     position: absolute;
     color: #FFF;
     top: 0px;
@@ -74,16 +79,59 @@ div.highlightTextIn a:before {
     transform: scale(0.8);
     opacity: 0;
 }
-div.highlightTextIn a:hover:before {
+
+.highlightTextIn a:hover:before {
     transform: scale(1);
     opacity: 1;
 }
+
+.full-screen-menu {
+    background-color: #2C3639;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.full-screen-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.full-screen-menu a {
+    color: #FFF;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 20px 0;
+    padding: 10px 10px;
+    text-transform: uppercase;
+}
+
+.menu-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
 .start {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 20rem;
+    margin-top: 25vh;
 }
 .welcome {
     display: flex;
@@ -103,9 +151,11 @@ div.highlightTextIn a:hover:before {
     font-size: 60px;
     font-weight: 400;
     margin-top: 1.625rem;
+    padding-left: 10px;
 }
 .start .dynamic-txt {
     margin-left: 15px;
+    padding-left: 10px;
     height: 90px;
     line-height: 90px;
     overflow: hidden;
@@ -203,7 +253,7 @@ section {
 /* Experiences section styles */
 #experiences {
     background-color: #2C3639;
-    color: #DCD7C9;
+    color: #2C3639;
     text-align: center;
     padding: 60px 0;
     display: flex;
@@ -244,7 +294,7 @@ section {
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid #FF9F55;
+    border: 4px solid #FC6D6D;
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -282,57 +332,29 @@ section {
 .right::after {
     left: -16px;
 }
+
 .info {
     padding: 20px 30px;
     background-color: white;
     position: relative;
     border-radius: 6px;
+    transform: translateY(100px);
     opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
+    transition: 1s all ease;
 }
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-   }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-   }
+  
+.info.active{
+    transform: translateY(0);
+    opacity: 1;
 }
-@media screen and (max-width: 600px) {
-   /* Place the timelime to the left */
-    .timeline::after {
-        left: 31px;
-   }
-   /* Full-width containers */
-    .timecard {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-   }
-   /* Make sure that all arrows are pointing leftwards */
-    .timecard::before {
-        left: 60px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-   }
-   /* Make sure all circles are at the same spot */
-    .left::after, .right::after {
-        left: 15px;
-   }
-   /* Make all right containers behave like the left ones */
-    .right {
-        left: 0%;
-   }
-}
+
 /* Projects section styles */
 #projects {
     background-color: #2C3639;
     padding: 60px 0;
     text-align: center;
     min-height: 100vh;
+    margin-bottom: -30px; 
 }
 #projects h2 {
     margin-bottom: 30px;
@@ -423,6 +445,7 @@ section {
 #contacts {
     min-height: 5vh;
     background: #2C3639;
+    margin-top: -10px;
 }
 .contacts-container h2 {
     color: #FC6D6D;
@@ -471,34 +494,44 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
 @media (max-width: 1200px) {
-   /* Adjust header layout for medium screens */
     header {
         padding: 1rem;
    }
-    .menu {
-        padding: 1rem;
-   }
+   .menu {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+    }
+    .menu-btn i {
+        font-size: 24px;
+        color: #FFF;
+    }
+
+    .full-screen-menu a {
+        font-size: 24px;
+    }
     .start {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 1rem;
-   }
-    .welcome {
-        padding-top: 5rem;
+        padding-top: 100px;
    }
     .content {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
    }
     .start .static-txt {
-        font-size: 50px;
+        font-size: 40px;
         padding-right: 100px;
    }
     .start .dynamic-txt {
-        font-size: 40px;
+        font-size: 20px;
    }
     .menu ul {
         flex-direction: column;
@@ -507,17 +540,33 @@ footer {
     #experiences .container {
         max-width: 100%;
         padding: 0 20px;
-       /* Add padding for better spacing */
    }
-    .timeline .outer {
-        flex-direction: column;
-   }
-    .timeline .outer .left-card, .timeline .outer .right-card {
-        margin: 5rem 2rem;
-   }
-    .timeline .outer .card .info .step {
-        font-size: 20px;
-   }
+
+   .timeline::after {
+        left: 31px;
+    }
+
+    .timecard {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timecard::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    .right {
+        left: 0%;
+    }
+
     .craft {
         flex-wrap: wrap;
         justify-content: center;
