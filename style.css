@@ -335,6 +335,13 @@ section {
     padding: 2rem 0 0;
 }
 
+.about-content p {
+    color: #DCD7C9;
+    text-align: left;
+    line-height: 1;
+    font-size: 18px;
+}
+
 .skills-list {
     list-style: none;
     padding: 0;
@@ -463,6 +470,10 @@ section {
 .info.active {
     transform: translateY(0);
     opacity: 1;
+}
+
+.info p {
+    text-align: left;
 }
 
 /* Projects Section */
