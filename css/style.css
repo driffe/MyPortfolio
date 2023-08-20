@@ -663,12 +663,19 @@ footer {
     }
 
     .menu-btn i {
-        font-size: 30px;
+        font-size: 55px;
         color: #FFF;
     }
 
     .full-screen-menu a {
-        font-size: 24px;
+        font-size: 35px;
+    }
+    .hover-me {
+        display: none;
+    }
+
+    #clean-button {
+        display: none;
     }
 
     .experiences-text h2, .projects-text h2 {
@@ -782,7 +789,7 @@ footer {
     }
 
     .card {
-        width: calc(50% - 1rem);
+        width: calc(50% - 20px);
         margin-bottom: 1rem;
     }
 
