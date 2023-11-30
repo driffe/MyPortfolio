@@ -88,50 +88,92 @@ header h1 {
 }
 
 /* Full Screen Menu */
-.full-screen-menu {
-    background-color: #2C3639;
+label .full-menu {
     position: fixed;
-    top: 0;
-    left: 0;
+    right:-45px;
+    top: -45px;
+    z-index: 100;
+    width: 120px;
+    height: 120px;
+    background: #2c3639;
+    border-radius:50%;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 0 0 #414A4C, 0 0 0 0 #414A4C;
+    cursor: pointer;
+}
+  
+label .ha {
+    position: absolute;
+    top: 75px;
+    left: 24px;
+    width: 30px;
+    height: 2.5px;
+    background: #fff;
+    display: block;
+    transform-origin: center;
+    transition: 0.5s ease-in-out;
+}
+label .ha:after, label .ha:before {
+    transition: 0.4s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    background: #FC6D6D;
 }
-
-.full-screen-menu.active {
+label .ha:before {
+    top: -10px;
+}
+label .ha:after {
+    bottom: -10px;
+}
+label input {
+    display: none;
+}
+label input:checked + .full-menu {
+    box-shadow: 0 0 0 100vw #2c3639, 0 0 0 100vh #2c3639;
+    border-radius: 0;
+}
+label input:checked + .full-menu .ha {
+    transform: rotate(45deg);
+}
+label input:checked + .full-menu .ha:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+label input:checked + .full-menu .ha:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+label input:checked + .full-menu + ul {
     opacity: 1;
-    pointer-events: auto;
-}
+    }
+label input:checked + .full-menu2 + ul{opacity:0}
 
-.full-screen-menu a {
-    color: #FFF;
+label ul {
+    z-index: 200;
+    list-style-type: none;
+    position: fixed;
+    text-align:center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.25s 0s ease-in-out;
+}
+label a {
+    margin-bottom: 1em;
+    display: block;
+    font-size: 30px;
+    color: #fff;
     text-decoration: none;
-    font: 20px;
-    margin: 20px 0;
-    padding: 10px 10px;
     text-transform: uppercase;
 }
 
-.full-screen-menu a:hover {
+label a:hover {
     cursor: pointer;
     color: #FC6D6D;
-}
-
-.menu-btn {
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 2;
-    padding: 20px;
 }
 
 /* Start */
@@ -657,17 +699,7 @@ footer {
         display: none;
     }
 
-    .menu-btn {
-        display: block;
-        cursor: pointer;
-    }
-
-    .menu-btn i {
-        font-size: 55px;
-        color: #FFF;
-    }
-
-    .full-screen-menu a {
+    label a {
         font-size: 35px;
     }
     

@@ -6,21 +6,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-
-        <div class="menu-btn" titlt="Menu">
-            <i class="fas fa-bars"></i>
-        </div>
-
+    <header id="home">
+            
         <div class="menu highlightTextIn">
-            <a alt="HOME" href="#start">home</a>
+            <a alt="HOME" href="#home">home</a>
             <a alt="ABOUT" href="#about-me">about</a>
             <a alt="EXPERIENCES" href="#experiences">experiences</a>
             <a alt="PROJECTS" href="#projects">projects</a>
             <a alt="CONTACT" href="#contacts">contact</a>
         </div>
-
-        <div class="start">
+        <!-- Full Screen Menu -->
+        <label>
+            <input id="menu-checkbox" type="checkbox"></input>
+            <span class="full-menu">
+                <span class="ha"></span>
+            </span>
+            <ul>
+                <li><a class="nav-link" href="#home">home</a></li>
+                <li><a class="nav-link" href="#about-me">about</a></li>
+                <li><a class="nav-link" href="#experiences">experiences</a></li>
+                <li><a class="nav-link" href="#projects">projects</a></li>
+                <li><a class="nav-link" href="#contacts">contact</a></li>
+            </ul>
+        </label>
+            
+        <div class="start" id="home">
             <div class="welcome">
                 <div class="content">
                     <div class="static-txt">Hi, I'm </div>
@@ -34,13 +44,13 @@
             </div>
         </div>
 
-        <div class="full-screen-menu">
+        <!-- <div class="full-screen-menu">
             <a alt="HOME" href="#start">home</a>
             <a alt="ABOUT" href="#about-me">about</a>
             <a alt="EXPERIENCES" href="#experiences">experiences</a>
             <a alt="PROJECTS" href="#projects">projects</a>
             <a alt="CONTACT" href="#contacts">contact</a>
-        </div>
+        </div> -->
 
         <div class="scroll-btn">
             <div class="scroll-bar"><a href=""><span></span></a></div>

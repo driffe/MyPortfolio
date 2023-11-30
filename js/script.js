@@ -61,3 +61,15 @@ function info() {
 
 window.addEventListener("scroll", info);
 
+function addListenersToLinks() {
+  const navLinks = document.querySelectorAll('a.nav-link');
+  
+  Array.from(navLinks).forEach(navLink => {
+    navLink.addEventListener('click', event => {
+      document.querySelector('#menu-checkbox').checked = false;
+    })
+  })  
+}
+
+document.body.onload = addListenersToLinks();  
+
