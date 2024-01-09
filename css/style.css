@@ -523,7 +523,6 @@ section {
 /* Projects Section */
 #projects {
     background-color: #2C3639;
-    padding: 60px 0;
     text-align: center;
     min-height: 100vh;
     margin-bottom: -30px;
@@ -535,79 +534,36 @@ section {
     padding: 0rem 0 5rem;
 }
 
-.craft {
+.icon {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 6rem;
 }
 
-.card {
-    width: 320px;
-    height: 500px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 8px solid #fff;
-    position: relative;
-}
-
-.card .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.card .card-body {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: -100%;
-    position: absolute;
-    background: #1f3d4738;
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    transition: 1s;
-    justify-content: flex-start;
-}
-
-.card:hover .card-body {
-    right: 0;
-}
-
-.card .card-body .card-title {
+.icon-container {
+    display: grid;
+    margin: 0 15px 30px;
+    width: 6rem;
+    height: 6rem;
+    color: #F6F1EE;
     text-align: center;
-    text-transform: capitalize;
-    font-size: 40px;
-    font-weight: 500;
+    align-items: center;
+    box-sizing: border-box;
+    border: 3px solid #F6F1EE;
+    border-radius: 10px;
 }
 
-.card .card-body .card-info {
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: 400;
-    text-align: left;
+.icon-container i{
+    font-size: 3rem;
 }
 
-.card .card-body .card-btn {
-    color: #1f3d47;
-    background: #DCD7C9;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-transform: capitalize;
-    border: none;
-    outline: none;
-    font-weight: 500;
+.icon-container:hover {
+    box-shadow: 0 0 10px 1px #ED7D31;
+    transform: scale(1.2);
+    transition: transform .3s ease;
     cursor: pointer;
-    width: 120px;
-    margin: 10px auto 0;
 }
+
 
 .button {
     display: inline-block;
