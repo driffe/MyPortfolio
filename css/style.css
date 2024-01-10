@@ -564,6 +564,9 @@ section {
     cursor: pointer;
 }
 
+.icon-container a:visited, .icon-container a:link {
+    color: #F6F1EE;
+}
 
 .button {
     display: inline-block;
@@ -694,10 +697,10 @@ footer {
         font-size: 24px;
     }
 
-    .menu ul {
+    /* .menu ul {
         flex-direction: column;
         gap: 1rem;
-    }
+    } */
 
     #about-me {
         flex-direction: column;

@@ -1,129 +1,143 @@
+/* 
+ED7D31 highlight
+6C5F5B sim
+4F4A45 bg color
+F6F1EE text
+*/
 :root {
-    --primary-color: #007bff;
-    --background-color: #f1f1f1; 
-  }
-  
-  body {
-    background-color: var(--background-color);
-  }
-  
-  b {
-    color: var(--primary-color);
-  }
-  
-  .tab {
-      overflow: hidden;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .tab button {
-      background-color: inherit;
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-  }
-  
-  .tab button:hover {
-  
-      background-color: #ddd;
-  }
-  
-  .tab button.active {
-      background-color: #ccc;
-  }
-  
-  
-  .tabcontent {
-      display: none;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-top: none;
-      text-align: center;
-  }
-  
-  input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  
-  input[type="text"]:focus {
-    outline: none;
-    border-color: var(--primary-color);
-  }
-  
-  
-  input[type="button"] {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  
-  input[type="button"]:hover {
-    background-color: #0056b3;
-  }
-  
-  
-  .hint-container {
+  --primary-color: #F6F1EE;
+  --background-color: #4F4A45; 
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.tab {
+    overflow: hidden;
+    border: 2px solid #6C5F5B;
+    background-color: #4F4A45;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .hint-container p {
-    margin: 0 5px;
-  }
-  
-  .hint-input {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-  }
-  
-  .hint-input p {
-    margin: 0 5px;
-  }
-  
-  /* Style the hint button */
-  #hintButton {
-    background-color: #f39c12;
-    color: #fff;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
     border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
+    outline: none;
     cursor: pointer;
-    margin: 0 5px;
-  }
-  
-  /* Add hover effect to hint buttons */
-  #hintButton:hover {
-    background-color: #e67e22; 
-  }
-  
-  /* Adjust layout for mobile devices */
-  @media screen and (max-width: 768px) {
-  
-    .tab {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .tablinks {
-      margin-bottom: 10px;
-    }
-  }
-  
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: #fff;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.tab button:hover {
+    box-shadow: 0 0 10px 1px #ED7D31;
+}
+
+.tab button.active {
+  border: 2px solid #ED7D31;
+  box-shadow: 0 0 10px 1px #ED7D31;
+}
+
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 2px solid #6C5F5B;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top: none;
+    text-align: center;
+    background-color: #6C5F5B;
+}
+
+.tabcontent b {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.tabcontent p {
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--primary-color);
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #6C5F5B;
+  border-radius: 4px;
+}
+
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+
+input[type="button"] {
+  background-color: #ED7D31;
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type="button"]:hover {
+  transform: scale(1.1);
+  transition: transform .1s ease;
+}
+
+
+.hint-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.hint-container p {
+  margin: 0 5px;
+}
+
+.hint-input {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.hint-input p {
+  margin: 0 5px;
+}
+
+/* Style the hint button */
+#hintButton {
+  background-color: #ED7D31;
+  color: var(--primary-color);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+/* Add hover effect to hint buttons */
+#hintButton:hover {
+  transform: scale(1.1);
+  transition: transform .1s ease;
+}
