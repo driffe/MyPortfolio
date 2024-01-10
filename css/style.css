@@ -147,8 +147,9 @@ label input:checked + .full-menu .ha:before {
     top: 0;
 }
 label input:checked + .full-menu + ul {
+    pointer-events: all;
     opacity: 1;
-    }
+}
 label input:checked + .full-menu2 + ul{opacity:0}
 
 label ul {
@@ -161,6 +162,7 @@ label ul {
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: 0.25s 0s ease-in-out;
+    pointer-events: none;
 }
 label a {
     margin-bottom: 1em;
