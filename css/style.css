@@ -255,25 +255,7 @@ label a:hover {
     }
 }
 
-#clean-button {
-    position: absolute;
-    top: 80%;
-    right: 5%;
-    transform: translateY(-50%);
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 12px;
-}
 
-#clean-button:hover {
-    background-color: #888;
-    color: #fff;
-}
 
 .scroll-btn {
     bottom: 30px;
@@ -303,37 +285,130 @@ label a:hover {
         transform: translateY(10px);
     }
 }
-
-.hover-me {
-    position: relative;
-    color: #fff;
-    font-size: 20px;
-    padding-left: 5px;
-    width: 20px;
-    border-radius: 15px;
-    cursor: pointer;
+.easteregg {
+    display: flex;
+    flex-direction: column;
     float: right;
-    right: 7%;
-    margin-top: 13%;
+    margin-top: 10rem;
+    margin-right: 3rem;
 }
 
-.hover-me:hover::before { 
-    content: "Try typing on screen";
-    display: block;
+.fun-content {
     font-size: 18px;
-    opacity: 1;
-    background-color: #2C3639;
-    padding: 5px;
-    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .hover-me {
+    position: relative;
+    z-index: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: #333;
+  }
+  
+  .tooltip {
+    width: 100%;
+    height: 10px;
+    background: #ffffff;
+    padding: 0.25em;
     text-align: center;
     position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%; 
+    top: 40px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: center top;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 80%;
     transform: translateX(-50%);
-    white-space: nowrap; 
-    z-index: 1; 
-    transition: opacity 0.3s;
+    border-width: 8px 7px 0;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tooltip p {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .fun-content:hover .tooltip {
+    top: -10px;
+    opacity: 1;
+    visibility: visible;
+    animation: goPopup 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  }
+  
+  .fun-content:hover .tooltip p {
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes goPopup {
+    0% {
+      transform: translateY(0) scaleY(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-50%) scaleY(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%) scaleY(1);
+      border-radius: 8px;
+      opacity: 1;
+      height: 40px;
+    }
+  }
+  
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-3px);
+    }
+    60% {
+      transform: translateY(-2px);
+    }
+  }
+
+.clean-btn {
+    justify-content: center;
+    display: flex;
+    text-align: center;
 }
+
+#clean-button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 12px;
+}
+
+#clean-button:hover {
+    background-color: #888;
+    color: #fff;
+}  
 
 /* Section */
 section {
@@ -526,7 +601,7 @@ section {
 #projects {
     background-color: #2C3639;
     text-align: center;
-    min-height: 100vh;
+    min-height: 80vh;
     margin-bottom: -30px;
 }
 
@@ -538,15 +613,16 @@ section {
 
 .icon {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 3rem;
 }
 
 .icon-container {
     display: grid;
     margin: 0 15px 30px;
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     color: #F6F1EE;
     text-align: center;
     align-items: center;
@@ -556,11 +632,11 @@ section {
 }
 
 .icon-container i{
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .icon-container:hover {
-    box-shadow: 0 0 10px 1px #ED7D31;
+    box-shadow: 0 0 10px 1px #FC6D6D;
     transform: scale(1.2);
     transition: transform .3s ease;
     cursor: pointer;
@@ -594,9 +670,9 @@ section {
     margin-top: -10px;
 }
 
-.contacts-text {
+.contacts-text h2{
     color: #FC6D6D;
-    font-size: 20px;
+    font-size: 40px;
     padding: 0rem 0 2rem;
 }
 
@@ -670,10 +746,6 @@ footer {
 
     #clean-button {
         display: none;
-    }
-
-    .experiences-text h2, .projects-text h2 {
-        font-size: 3rem;
     }
 
     .start {
@@ -774,26 +846,12 @@ footer {
     .right {
         left: 0%;
     }
-
-    .craft {
-        flex-wrap: wrap;
-        justify-content: center;
+/* projects*/
+    .icon {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
-        gap: 3rem;
-    }
-
-    .card {
-        width: calc(50% - 20px);
-        margin-bottom: 1rem;
-    }
-
-    .card .card-body {
-        padding: 15px;
-        font-size: 14px;
-    }
-    
-    .card .card-body .card-info {
-        padding: 10px;
+        justify-items: center;
     }
 
 }
